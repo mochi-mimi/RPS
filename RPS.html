@@ -90,14 +90,14 @@
 
   }
 
-  if (playerScore >= 3) {
+  if (playerScore > computerScore) {
     console.log("Congratulations, you win!")
   }
-  else if (playerScore <= 2) {
-    console.log("Gomen, you lose!")
+  else if (playerScore < computerScore) {
+    console.log("Sorry, you lose!")
   }
   else {
-    console.log("You tied.")
+    console.log("You tied, no winner or loser!")
   }
 
  }
