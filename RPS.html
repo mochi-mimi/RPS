@@ -7,34 +7,38 @@
 <body>
   <script>
 
-  var choices = ['Rock', 'Paper', 'Scissors']
+  var choices = ['ROCK', 'PAPER', 'SCISSORS']
 
   function getComputerSelection() {
     return choices[Math.floor(Math.random() * choices.length)];
   }
 
-
-   function getPlayerSelection(playerSelection) {
-    return playerSelection
-   }
-
-   const playerSelection = 'Rock';
+  function getPlayerSelection() {
+    let playerSelection = prompt("What's your selection?").toUpperCase();
+    return playerSelection;
+  }
 
   function playRound(playerSelection, computerSelection) {
-      if (playerSelection === 'Rock', computerSelection === 'Rock') return("Tie!");
-      else if (playerSelection === 'Rock', computerSelection === 'Paper') return("You lose! Paper beats Rock.");
-      else if (playerSelection === 'Rock', computerSelection === 'Scissors') return("You win! Rock beats Scissors.")
+    if (playerSelection == 'ROCK' && computerSelection == 'ROCK') return("Tie!");
+    else if (playerSelection == 'ROCK' && computerSelection == 'PAPER') return("You lose! PAPER beats ROCK.");
+    else if (playerSelection == 'ROCK'&& computerSelection == 'SCISSORS') return("You win! ROCK beats SCISSORS.");
+    else if (playerSelection == 'PAPER'&& computerSelection == 'ROCK') return("You win! PAPER beats ROCK."); 
+    else if (playerSelection == 'PAPER'&& computerSelection == 'PAPER') return("Tie!");
+    else if (playerSelection == 'PAPER'&& computerSelection == 'SCISSORS') return("You lose! SCISSORS beats PAPER.");
+    else if (playerSelection == 'SCISSORS'&& computerSelection == 'ROCK') return("You lose! ROCK beats SCISSORS.");
+    else if (playerSelection == 'SCISSORS'&& computerSelection == 'PAPER') return("You win! SCISSORS beats PAPER!");
+    else if (playerSelection == 'SCISSORS'&& computerSelection == 'SCISSORS') return("Tie!");
   }
+  
 
 
  function game() {
   var computerSelection = getComputerSelection();
-
+  var playerSelection = getPlayerSelection();
   const roundOne = playRound(playerSelection, computerSelection);
   console.log(roundOne);
-  computerSelection = getComputerSelection();
   let text = roundOne;
-  let result = 0;//text.includes("win");
+  let result = 0;
   var playerScore = 0;
   var computerScore = 0;
   if (text.includes("You win")) {
@@ -44,7 +48,7 @@
     computerScore = computerScore + 1;
   }
  
-
+  playerSelection = getPlayerSelection();
   const roundTwo = playRound(playerSelection, computerSelection);
   console.log(roundTwo);
   computerSelection = getComputerSelection();
@@ -56,6 +60,7 @@
    computerScore = computerScore + 1;
   }
 
+  playerSelection = getPlayerSelection()
   const roundThree = playRound(playerSelection, computerSelection);
   console.log(roundThree);
   computerSelection = getComputerSelection();
@@ -67,6 +72,7 @@
    computerScore = computerScore + 1;
   }
 
+  playerSelection = getPlayerSelection()
   const roundFour = playRound(playerSelection, computerSelection);
   console.log(roundFour);
   computerSelection = getComputerSelection();
@@ -78,6 +84,7 @@
     computerScore = computerScore + 1;
   }
 
+  playerSelection = getPlayerSelection()
   const roundFive = playRound(playerSelection, computerSelection);
   console.log(roundFive);
   computerSelection = getComputerSelection();
